@@ -12,19 +12,9 @@ circumference = quarter * 4
 pi = circumference / diameter
 ```
 
-## How to compile
-
-You need a C compiler. It's recommended to use GCC and the GNU Make tool.
-
-Clone or download this project and run:
-
-```
-make
-```
-
 ## How to use
 
-Usage: `pi [ diameter ]`
+Usage: `node ./pi.js [ diameter ]`
 
 * **`diameter`**: Diameter of the circumference. Default: 100000
 
@@ -33,8 +23,9 @@ The larger the diameter, the better the accuracy.
 ## Example
 
 ```
-./pi 1000000000
+node ./pi.js 1000000000
 Pi (calculated) = 3.1415926535954846
 Pi (predefined) = 3.1415926535897931
      difference = 0.0000000000056914
+
 ```
