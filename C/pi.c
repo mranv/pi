@@ -38,7 +38,7 @@ int main(int argc, char ** argv) {
         }
 
         char * end;
-        diameter = strtol(argv[1], &end, *end);
+        diameter = strtol(argv[1], &end, 10);
 
         if (*end || diameter <= 0) {
             fprintf(stderr, "Bad diameter: %s. Expecting positive integer number.\n", argv[1]);
