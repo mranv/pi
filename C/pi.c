@@ -19,7 +19,7 @@
 #include <math.h>
 
 #define NAME            "pi"
-#define VERSION         "v1.0"
+#define VERSION         "v1.1"
 #define DEF_DIAMETER    100000
 
 #define distance(x1, y1, x2, y2) sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2))
