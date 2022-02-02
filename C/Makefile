@@ -3,7 +3,7 @@
 # February 9, 2018
 
 CC      = gcc
-CFLAGS  = -pipe -O2
+CFLAGS  = -pipe -O2 -Wall -Wextra -pthread
 LIBS    = -lm
 TARGET  = pi
 RM_FILE = rm -rf

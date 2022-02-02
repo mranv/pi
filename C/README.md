@@ -24,17 +24,18 @@ make
 
 ## How to use
 
-Usage: `pi [ diameter ]`
+Usage: `pi [ radius ]`
 
-* **`diameter`**: Diameter of the circumference. Default: 100000
+* **`radius`**: Radius of the circumference. Default: 100000
 
-The larger the diameter, the better the accuracy.
+The larger the radius, the better the accuracy.
 
 ## Example
 
 ```
-./pi 1000000000
-Pi (calculated) = 3.1415926535954846
+./pi 100000000
+Pi (calculated) = 3.1415926535894991
 Pi (predefined) = 3.1415926535897931
-     difference = 0.0000000000056914
+     difference = 0.0000000000002940
+           time = 35.7923310000 ms
 ```

@@ -10,8 +10,9 @@
 
 #define PI_NAME             "pi"
 #define PI_VERSION          "v1.1"
-#define PI_DEF_DIAMETER     200000000
+#define PI_DEFAULT_RADIUS   100000000
 
-double calculate_pi(double diameter);
+double pi_compute(long radius, long nproc);
+double pi_arc(long radius, long y_min, long y_max);
 
 #endif
