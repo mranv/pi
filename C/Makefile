@@ -4,7 +4,7 @@
 
 CC      = gcc
 CFLAGS  = -pipe -O2 -Wall -Wextra -pthread
-LIBS    = -lm
+LIBS    = -lm -lmpfr
 TARGET  = pi
 RM_FILE = rm -rf
 
