@@ -18,12 +18,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout project
+      uses: actions/checkout@v2
       with:
         submodules: recursive
 
     - name: Install MPFR library
-      run: sudo apt-get install -y libgmp-dev && wget https://www.mpfr.org/mpfr-current/mpfr-4.1.0.tar.gz && tar -xf mpfr-4.1.0.tar.gz && cd mpfr-4.1.0 && ./configure && make && sudo make install
+      run: |
+        wget -q http://mirrors.kernel.org/ubuntu/pool/main/g/gmp/libgmp10_6.2.1+dfsg-1ubuntu2_amd64.deb
+        wget -q http://mirrors.kernel.org/ubuntu/pool/main/g/gmp/libgmpxx4ldbl_6.2.1+dfsg-1ubuntu2_amd64.deb
+        wget -q http://mirrors.kernel.org/ubuntu/pool/main/g/gmp/libgmp-dev_6.2.1+dfsg-1ubuntu2_amd64.deb
+        wget -q http://mirrors.kernel.org/ubuntu/pool/main/m/mpfr4/libmpfr6_4.1.0-3build1_amd64.deb
+        wget -q http://mirrors.kernel.org/ubuntu/pool/main/m/mpfr4/libmpfr-dev_4.1.0-3build1_amd64.deb
+        sudo dpkg -i libgmp10_6.2.1+dfsg-1ubuntu2_amd64.deb
+        sudo dpkg -i libgmpxx4ldbl_6.2.1+dfsg-1ubuntu2_amd64.deb
+        sudo dpkg -i libgmp-dev_6.2.1+dfsg-1ubuntu2_amd64.deb
+        sudo dpkg -i libmpfr6_4.1.0-3build1_amd64.deb
+        sudo dpkg -i libmpfr-dev_4.1.0-3build1_amd64.deb
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
