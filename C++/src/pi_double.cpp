@@ -10,7 +10,7 @@
 
 using namespace std;
 
-template <> PiDouble::Pi(long precision __attribute__((unused))) {
+template <> PiDouble::Pi(long precision __attribute__((unused))) : _precision(16) {
 }
 
 template <> PiDouble::~Pi() {
@@ -18,7 +18,6 @@ template <> PiDouble::~Pi() {
 
 template <> void PiDouble::compute() {
     _value = acos(-1);
-    _precision = 16;
 }
 
 template <> ostream & PiDouble::print(ostream & os) const {
