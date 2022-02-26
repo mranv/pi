@@ -19,6 +19,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: recursive
 
     - name: Install MPFR library
       run: sudo apt-get install -y libgmp-dev && wget https://www.mpfr.org/mpfr-current/mpfr-4.1.0.tar.gz && tar -xf mpfr-4.1.0.tar.gz && cd mpfr-4.1.0 && ./configure && make && sudo make install

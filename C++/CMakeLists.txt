@@ -1,5 +1,3 @@
-INCLUDE (CheckIncludeFiles)
-
 cmake_minimum_required(VERSION 3.10)
 
 # set the project name
@@ -13,5 +11,10 @@ include_directories(include)
 
 # add the executable
 add_executable(pi ${SOURCES})
-
 target_link_libraries(pi -lmpfr)
+
+include(CTest)
+
+if(BUILD_TESTING)
+    add_subdirectory(test)
+endif()

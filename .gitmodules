@@ -1,0 +1,3 @@
+[submodule "C++/extern/googletest"]
+	path = C++/extern/googletest
+	url = ../../google/googletest.git
