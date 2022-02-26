@@ -13,6 +13,8 @@ include_directories(include)
 add_executable(pi ${SOURCES})
 target_link_libraries(pi -lmpfr)
 
+install(TARGETS pi DESTINATION bin)
+
 include(CTest)
 
 if(BUILD_TESTING)
