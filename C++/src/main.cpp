@@ -20,7 +20,7 @@ static void print_out(const unique_ptr<PiBase> & pi, double time_ms) {
         cout << "Precision = " << pi->precision() << " digits\n";
         cout << "Time = " << time_ms << " ms\n";
     } else {
-        cout << "{\"pi\":\"" << *pi << "\",\"precision\":" << pi->precision() << ", \"time_ms:\":" << time_ms << "}";
+        cout << "{\"pi\":\"" << *pi << "\",\"precision\":" << pi->precision() << ",\"time_ms\":" << time_ms << "}";
     }
 }
 
