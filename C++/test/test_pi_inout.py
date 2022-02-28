@@ -68,6 +68,13 @@ def test_double_run():
     loads(result.stdout)
 
 
+def test_double_value():
+    """Check the value of pi in double-precision mode."""
+    result = run([PI_BIN, '-md'], capture_output=True, check=True)
+    data = loads(result.stdout)
+    assert '3.141592653589793' == data['pi']
+
+
 def test_double_precision():
     """Check that the precision member in double-precision mode is 16."""
     result = run([PI_BIN, '-md'], capture_output=True, check=True)
