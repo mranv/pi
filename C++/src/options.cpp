@@ -54,7 +54,7 @@ Options::Options(int argc, char * const argv[]) {
         case 'p':
             _precision = strtol(optarg, &end, 10);
 
-            if (*end != '\0' || _precision < 1 || _precision == LONG_MAX) {
+            if (*end != '\0' || _precision < 1 || _precision >= 9223372036854775552) {
                 cerr << "ERROR: Invalid value for option -p.\n";
                 exit(EXIT_FAILURE);
             }

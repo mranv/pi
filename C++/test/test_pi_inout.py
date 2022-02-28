@@ -67,9 +67,14 @@ def test_precision_zero():
     assert b'ERROR: Invalid value for option -p.\n' == p.stderr
 
 def test_precision_overflow():
-    p = run(['../../build/pi', '-p9223372036854775807'], capture_output=True)
+    p = run(['../../build/pi', '-p9223372036854775552'], capture_output=True)
     assert p.returncode == 1
     assert b'ERROR: Invalid value for option -p.\n' == p.stderr
+
+def test_cannot_allocate():
+    p = run(['../../build/pi', '-p9223372036854775551'], capture_output=True)
+    assert p.returncode == -6
+    assert b'GNU MP: Cannot allocate memory (size=1152921504606846952)\n' == p.stderr
 
 def test_tty_run():
     p = run(['script', '-qc', '../../build/pi'], capture_output=True, check=True)
