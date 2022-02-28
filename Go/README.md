@@ -1,5 +1,7 @@
 # Calculating the number π (Go)
 
+[![Build](https://github.com/vikman90/pi/actions/workflows/build.yml/badge.svg)](https://github.com/vikman90/pi/actions/workflows/build.yml)
+
 This folder contains a Go implementation of the Brent-Salamin algorithm to calculate Pi.
 
 ## Setup

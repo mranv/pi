@@ -1,6 +1,6 @@
 # Calculating the number π (C++)
 
-[![CMake](https://github.com/vikman90/pi/actions/workflows/cmake.yml/badge.svg?branch=master)](https://github.com/vikman90/pi/actions/workflows/cmake.yml)
+[![Build](https://github.com/vikman90/pi/actions/workflows/build.yml/badge.svg)](https://github.com/vikman90/pi/actions/workflows/build.yml)
 
 This folder contains an C++ implementation to calculate Pi through two methods:
 
