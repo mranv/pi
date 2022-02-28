@@ -36,6 +36,9 @@ jobs:
         sudo dpkg -i libmpfr6_4.1.0-3build1_amd64.deb
         sudo dpkg -i libmpfr-dev_4.1.0-3build1_amd64.deb
 
+    - name: Install pytest
+      run: pip3 install -r requirements.txt
+
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
