@@ -2,6 +2,8 @@ from subprocess import run
 from json import loads
 from re import match, fullmatch
 
+import pytest
+
 def test_default_run():
     global p
     p = run(['../../build/pi'], capture_output=True, check=True)
@@ -56,20 +58,12 @@ def test_invalid_methd():
     assert p.returncode == 1
     assert b'ERROR: Invalid value for option -m.\n' == p.stderr
 
-def test_negative_precision():
-    p = run(['../../build/pi', '-p-1'], capture_output=True)
-    assert p.returncode == 1
-    assert b'ERROR: Invalid value for option -p.\n' == p.stderr
-
-def test_precision_zero():
-    p = run(['../../build/pi', '-p0'], capture_output=True)
-    assert p.returncode == 1
-    assert b'ERROR: Invalid value for option -p.\n' == p.stderr
-
-def test_precision_overflow():
-    p = run(['../../build/pi', '-p9223372036854775552'], capture_output=True)
-    assert p.returncode == 1
-    assert b'ERROR: Invalid value for option -p.\n' == p.stderr
+@pytest.mark.parametrize('inval', [-1, 0, 9223372036854775552])
+def test_precision_invalid(inval):
+    """Check that pi fails and reports an error with some invalid precision values."""
+    result = run(['../../build/pi', '-p' + str(inval)], capture_output=True, check=False)
+    assert result.returncode == 1
+    assert b'ERROR: Invalid value for option -p.\n' == result.stderr
 
 def test_cannot_allocate():
     p = run(['../../build/pi', '-p9223372036854775551'], capture_output=True)
